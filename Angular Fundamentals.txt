@@ -1,0 +1,135 @@
+1:22 PM 10/14/2023
+
+
+https://www.pluralsight.com/courses/angular-fundamentals
+Angular 11 Fundamentals (free)
+by Jim Cooper and Joe Eames
+https://github.com/jmcooper/angular-fundamentals-files
+
+<input ngModel (ngModelChange)="change($event)">
+<input (ngModel)="userName" type="text"> --doesn't work
+
+    <form #tmp="ngForm" action="">
+        <input (ngModel)="user" name="user1">
+        <hr>
+        <input (ngModel)='tempo' name="tempo">
+    </form>
+    <hr>
+    <h2>{{ tmp.value | json }}</h2>
+
+
+@rem ng new walk-my-dog --dry-run
+ng new %1 --inline-style --inline-template --minimal
+
+ng new fundamentals --minimal
+
+ng new fundamentals --minimal
+
+CREATE fundamentals/angular.json (2979 bytes)
+CREATE fundamentals/package.json (788 bytes)
+
+ng new ng-fun --minimal
+CREATE ng-fun/angular.json (2949 bytes)
+CREATE ng-fun/package.json (782 bytes)
+
+@Input() event: any
+@Output() eventClick = new EventEmitter()
+
+3rd method template variable
+#thumb
+(click)="thumb.logFoo()"
+
+Consolas, 'Courier New', monospace
+
+"editor.fontFamily": ""
+
+Expression Recommendations
+No Side-Effects
+unidirectional flow
+Idempotent - should return the same result each time you call it
+
+Repeating Data with ngFor
+Handling null values with safe navigation
+        <div>Time: {{ event?.time }}</div>
+
+        <div [ngSwitch]="event?.time">
+            <span *ngSwitchCase="'8:00 am'">Early Start</span>
+            <span *ngSwitchCase="'10:00 am'">Late Start</span>
+            <span *ngSwitchDefault>Normal Start</span>
+        </div>
+
+styling
+        <div [class.green]="event?.time === '8:00 am'"
+[class.xxx] a single class name
+[ngClass]="{green: expr, bold: expr}"
+[ngClass]="getClass()"
+
+return { green: ..., bold: ... }
+or return 'green bold'
+or return ['green', 'bold']
+additive
+
+adding @Injectable() decorator is necessary only if the class has its own dependencies
+only if it injects other services
+register in our app.module
+add as a provider
+
+task:
+when you click thumbnail display a toaster message
+npm install toastr
+css, js Note: requires jquery 
+angular.json
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/toastr/build/toastr.min.js"
+            ]
+
+declare let toastr: any
+@Component({
+let the typescript know this variable (toastr) is in scope already declared somewhere else
+
+> Routing and navigating
+
+export const appRoutes: Routes = [
+    { path: 'event/list', component: EventListComponent },
+    { path: 'event/:id', component: EventDetailsComponent },
+    { path: '', redirectTo: 'event/list', pathMatch: 'full' }
+]
+
+pull the id off the url
+-> import ActivatedRoute
+
+private route: ActivatedRoute
+this.eventService.getEvent(+this.route.snapshot.params['id'])
+
+ [routerLink]="['/event', event.id]"
+slash is important -- or not?
+
+to navigate from code
+
+providers
+    {provide: EventService, useValue: EventService}
+when this is requested, use this value
+
+task: wait for the service to load
+
+creating barrels
+
+export * from './create-event.component'
+export * from './event-list-resolver.service'
+export * from './event-list.component'
+export * from './event-thumbnail.component'
+
+10:56 AM 10/24/2023
+TS4111: Property 'userName' comes from an index signature, so it must be accessed with ['userName'].
+<h2>{{ loginForm.controls.userName }}</h2>
+to resolve
+"noPropertyAccessFromIndexSignature": false,
+
+https://www.typescriptlang.org/tsconfig#noPropertyAccessFromIndexSignature
+This setting ensures consistency between accessing a field via the “dot” (obj.key) syntax, and “indexed” (obj["key"]) and the way which the property is declared in the type.
+
+Without this flag, TypeScript will allow you to use the dot syntax to access fields which are not defined:
+
+I am already logged in but my form does not display the data
+let's prepopulate the form
