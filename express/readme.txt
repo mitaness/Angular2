@@ -1,9 +1,3 @@
-10:30 AM 10/28/2023
-https://www.pluralsight.com/courses/nodejs-express-web-applications-building
-
-Building Web Applications with Node.js and Express
-by Jonathan Mills
-
 10:46 AM 10/28/2023
 ["C:\tmp\express\readme.txt"]
 https://www.pluralsight.com/courses/nodejs-express-web-applications-building
@@ -65,6 +59,5 @@ catchError, throwError (to send the new object)
 
 Argument of type 'number' is not assignable to parameter 
 of type '(err: any, caught: Observable<void>) => ObservableInput<any>'
-
 
 
