@@ -39,6 +39,8 @@ export class EventListComponent {
         //     next: x => this.events = x
         // })
         // this.events = this.eventService.getEvents()
+        this.eventService.next().subscribe()
+        // this.eventService.next()
     }
 
     handleThumbnailClick(eventName: string) {

@@ -1,9 +1,31 @@
+import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core"
-import { Observable, Subject } from "rxjs"
+import { catchError, Observable, of, Subject } from "rxjs"
 import { IEvent } from "./event.model";
 
 @Injectable()
 export class EventService {
+
+    constructor(private http: HttpClient) { }
+
+    next() {
+        return this.http.get('/api/courses')
+            // .pipe(catchError(this.catch1))
+            .pipe(catchError(this.handleError('next', [])))
+    }
+
+    catch1<T>(err: any) {
+        return of(1)
+    }
+
+    private handleError<T>(operation = 'operation', result?: T) {
+        return (err: any) => {
+            console.log('EMPTY STRING ====')
+            console.error(err);
+            return of(result as T)
+        }
+    }
+
     getEvents(): Observable<IEvent[]> {
         var subject = new Subject<IEvent[]>()
         setTimeout(() => {
@@ -16,6 +38,13 @@ export class EventService {
 
     getEvent(id: number) {
         return EVENTS.find(x => x.id === id)
+    }
+
+    addEvent(item: any) {
+        console.log('Adding new event')
+        item.id = 888
+        EVENTS.push(item)
+        console.log(EVENTS)
     }
 }
 
