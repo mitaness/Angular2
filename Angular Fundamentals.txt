@@ -133,3 +133,40 @@ Without this flag, TypeScript will allow you to use the dot syntax to access fie
 
 I am already logged in but my form does not display the data
 let's prepopulate the form
+
+5:14 PM 10/26/2023
+Validators
+    firstName = new FormControl('abc', [Validators.required, Validators.pattern('[B-Z].*')])
+Errors: { "pattern": { "requiredPattern": "^[B-Z].*$", "actualValue": "A" } }
+Errors: { "required": true }
+
+10:08 AM 10/27/2023
+https://github.com/angular/angular/issues/46918
+An example of how to suppress this check right now (it's not obvious from previous comments):
+  "angularCompilerOptions": {
+    "extendedDiagnostics": {
+      "checks": {
+        "optionalChainNotNullable": "suppress"
+      }
+    }
+  }
+solving very annoying warnings that are actually wrong
+
+12:17 PM 10/27/2023
+I like addEvent instead of createEvent or saveEvent
+adding implies I can remove the event afterwards
+create -> destroy ?
+
+1:45 PM 10/28/2023
+Http
+ng serve --proxy-config proxy.conf.json
+content:
+
+{
+    "/api": {
+        "target": "http://localhost:3000",
+        "secure": false
+    }
+}
+
+-> /api/users pass the request to proxy
