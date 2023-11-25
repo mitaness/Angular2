@@ -1,0 +1,19 @@
+8:14 AM 11/4/2023
+https://material.angular.io/guide/theming#using-a-pre-built-theme
+ Using a pre-built theme
+Angular Material includes four pre-built theme CSS files, each with different palettes selected
+
+You can find the pre-built theme files in the "prebuilt-themes" directory of Angular Material's npm package (@angular/material/prebuilt-themes). To include the pre-built theme in your application, add your chosen CSS file to the styles array of your project's angular.json file.
+A. need a dark theme
+@import "~@angular/material/prebuilt-themes/pink-bluegrey.css";
+ in styles.css
+
+Application background color
+
+By default, Angular Material does not apply any styles to your DOM outside its own components. If you want to set your application's background color to match the components' theme, you can either:
+
+2. Apply the mat-app-background CSS class to your main content root element (typically body)
+<body class="mat-typography mat-app-background">
+
+
+8:37 AM 11/4/2023

@@ -1,0 +1,42 @@
+[routerLink]="['/event', event.id]"
+9:02 AM 11/4/2023
+{ path: 'event/:id', component: EventDetailsComponent }
+
+{
+ path: 'product/:id/edit',
+ component: ...,
+ children: [...]
+  
+
+export const appRoutes: Routes = [
+    {
+        path: 'event/:id',
+        component: EventDetailsComponent,
+        children: [
+            { path: 'info', component: EventDetailsInfoComponent },
+            { path: 'location', component: EventDetailsLocationComponent },
+            { path: '', redirectTo: 'info', pathMatch: 'full' }
+        ]
+    }
+]
+
+the full path becomes
+ event/1/info
+ event/1/location
+
+12:51 PM 11/5/2023
+Passing data
+ { path: 'location', component: EventDetailsLocationComponent, data: { next: 'info' } },
+
+in Component (ActivatedRoute)
+ route.snapshot.data.next
+
+navigate in code
+this.router.navigate([this.ns.getNext()], { relativeTo: this.route })
+
+Relative path
+this.router.navigate(['info'], { relativeTo: this.route })
+Note: no slash: 'info'
+
+// Abs path
+this.router.navigate(['/product', this.product.id, 'edit', 'info'])
