@@ -1,0 +1,7 @@
+https://medium.com/@starikovs/how-to-use-angular-cli-locally-729dbb6707dd
+11:57 AM 11/26/2023
+How to use Angular CLI locally
+
+npx -p @angular/cli ng new hello-world-project 
+
+npx will download the @angular/cli package temporarily and run the ng command. BTW, npx goes with the npm installation.
