@@ -1,0 +1,16 @@
+<h2>A</h2>
+<article [formGroup]="bod">
+   <h2><input type="number" formControlName="amount">{{amount}}</h2>
+   <h2>
+      <label><input type="radio" formControlName="freq" [value]="1">Montly</label>
+      <label><input type="radio" formControlName="freq" [value]="2">Quarterly</label>
+      <label><input type="radio" formControlName="freq" [value]="3">Yearly</label>
+   </h2>
+   <h2>
+      <label><input type="radio" formControlName="via" [value]="1">Bezhotovostni</label>
+      <label><input type="radio" formControlName="via" [value]="2">Slozenka</label>
+      <label><input type="radio" formControlName="via" [value]="3">SIPO</label>
+   </h2>
+</article>
+<h2>{{ bod.value | json }}</h2>
+<h2 *ngIf="bod.invalid" class="error">invalid</h2>

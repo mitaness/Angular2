@@ -1,0 +1,25 @@
+h2 {
+   background-color: aquamarine;
+}
+
+.sad {
+   outline: 1px solid green;
+   display: flex;
+   flex-direction: column;
+   width: 300px;
+   /* padding: 11px; */
+   padding: .7em;
+}
+
+input {
+   line-height: 1.5em;
+}
+
+.xyz {
+   display: flex;
+   outline: 1px solid red;
+}
+
+.xyz>input {
+   flex-grow: 1;
+}

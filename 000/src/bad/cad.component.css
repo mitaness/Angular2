@@ -1,0 +1,7 @@
+ul li {
+   margin-top: 1em;
+   font-size: 2em;
+   font-weight: bold;
+   outline: 1px solid plum;
+   cursor: pointer;
+}

@@ -1,0 +1,23 @@
+img {
+   width: 70px;
+}
+
+ul {
+   display: flex;
+   outline: 1px solid green;
+   padding-left: 0;
+   flex-wrap: wrap;
+   width: 820px;
+}
+
+li {
+   outline: 1px solid plum;
+   margin: 0;
+   margin-left: 1em;
+   margin-top: 1em;
+   cursor: pointer;
+}
+
+.selected {
+   background-color: #e0fecb;
+}

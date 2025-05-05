@@ -1,0 +1,13 @@
+<h2>A</h2>
+<article [formGroup]="did">
+   <input type="range" formControlName="amount">
+   <h2>
+      <label><input type="radio" formControlName="customProgram" [value]="true">Vlastni strategie</label>
+      <label><input type="radio" formControlName="customProgram" [value]="false">Program</label>
+   </h2>
+</article>
+<h2>{{ did.value | json }}</h2>
+<h2 class="error" *ngIf="did.invalid">invalid</h2>
+
+<cid *ngIf="cidVisible"></cid>
+<mid *ngIf="midVisible" (programChange)="xyz($event)"></mid>

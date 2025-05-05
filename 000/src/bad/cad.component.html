@@ -1,0 +1,9 @@
+<h2>Cad</h2>
+
+<ul>
+   @for (contact of contacts; track contact.id) {
+   <li [routerLink]="['/sad', contact.id]">{{ contact.firstName }}</li>
+   } @empty {
+   <li>There are no items.</li>
+   }
+</ul>

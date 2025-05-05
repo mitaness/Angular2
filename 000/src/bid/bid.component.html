@@ -1,0 +1,21 @@
+<h2>A</h2>
+<article [formGroup]="bid">
+   <input type="range" formControlName="amount">
+   <h2>
+      <label><input type="radio" formControlName="program" [value]="1">A</label>
+      <label><input type="radio" formControlName="program" [value]="2">B</label>
+      <label><input type="radio" formControlName="program" [value]="3">C</label>
+
+   </h2>
+
+   <h2>
+      <label><input type="radio" formControlName="program2" [value]="1">A</label>
+      <label><input type="radio" formControlName="program2" [value]="2">B</label>
+      <label><input type="radio" formControlName="program2" [value]="3">C</label>
+
+   </h2>
+</article>
+<button (click)="test()">Test</button>
+
+<h2>{{ bid.value | json }}</h2>
+<h2 class="error" *ngIf="bid.invalid">invalid</h2>

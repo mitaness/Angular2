@@ -1,0 +1,11 @@
+<h2>M</h2>
+<article [formGroup]="mid">
+   <h2>
+      <label><input type="radio" formControlName="program" [value]="1">Dynamicky</label>
+      <label><input type="radio" formControlName="program" [value]="2">Balancovany</label>
+      <label><input type="radio" formControlName="program" [value]="3">Konzervativni</label>
+   </h2>
+</article>
+
+<h2>{{ mid.value | json }}</h2>
+<h2 class="error" *ngIf="mid.invalid">invalid</h2>

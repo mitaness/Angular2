@@ -1,0 +1,11 @@
+<h2>sad component</h2>
+<article class="sad">
+   <input type="text" placeholder="First Name" [formControl]="firstName">
+   <input type="text" placeholder="Last Name" [formControl]="lastName">
+   <span class="xyz"><input type="range">sdjf</span>
+   <input type="date" placeholder="Date of Birth" [formControl]="dob">
+   <input type="text">
+
+</article>
+<h2>{{ firstName.value | json }}</h2>
+<h2>{{ dob.value | json }}</h2>
