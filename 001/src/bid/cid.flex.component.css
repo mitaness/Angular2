@@ -1,0 +1,55 @@
+header {
+   color: white;
+   background-color: #0072b0;
+   border-radius: .5em;
+   padding: 1em 1.5em;
+}
+
+:host {
+   display: block;
+   margin: .5em;
+}
+
+.container {
+   display: flex;
+   /* margin-top: 1em; */
+}
+
+main {
+   background-color: #fff;
+   border-radius: .5em;
+   padding: 1em 1.5em;
+   width: 70%;
+}
+
+.sidebar {
+   padding: 1.5em;
+   background-color: #fff;
+   border-radius: .5em;
+   margin-left: 1.5em;
+   margin-top: 0;
+   width: 30%;
+   /* padding-bottom: 5em; */
+}
+
+.button-link {
+   display: block;
+   background-color: #0090c9;
+   text-align: center;
+   text-decoration: none;
+   text-transform: uppercase;
+   padding: 0.5em;
+   color: #fff;
+
+}
+
+/* .button-link+.button-link {
+   margin-top: 1.5em;
+} */
+
+.sponsor-link {
+   display: block;
+   color: #0072b0;
+   font-weight: bold;
+   text-decoration: none;
+}

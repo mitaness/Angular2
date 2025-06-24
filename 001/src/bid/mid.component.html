@@ -1,0 +1,17 @@
+<article [formGroup]="mid">
+   <h2><label><input type="checkbox" formControlName="cb1">cb1</label></h2>
+   <h2><label><input type="checkbox" formControlName="cb2">cb2</label></h2>
+   <h2><label><input type="checkbox" formControlName="cb3">cb3</label></h2>
+   <h2><label><input type="checkbox" formControlName="cb4">cb4</label></h2>
+   <h2><label><input type="checkbox" formControlName="cb5">cb5</label></h2>
+   <hr>
+   <article formGroupName="question2">
+      <h2><label><input type="checkbox" formControlName="cb1">cb1</label></h2>
+      <h2><label><input type="checkbox" formControlName="cb2">cb2</label></h2>
+      <h2><label><input type="checkbox" formControlName="cb3">cb3</label></h2>
+      <h2><label><input type="checkbox" formControlName="cb4">cb4</label></h2>
+   </article>
+   <hr>
+</article>
+
+<h2 [class.invalid]="mid.invalid">{{ mid.value | json }}</h2>

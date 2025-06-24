@@ -1,0 +1,24 @@
+article {
+   background-color: #eee;
+}
+
+.test {
+   display: flex;
+   background-color: #eee;
+   height: 200px;
+   flex-direction: column;
+   /* align-items: center; */
+   justify-content: space-around;
+}
+
+.test>div {
+   width: 100px;
+   height: 20px;
+   background-color: lightblue;
+   margin-left: 20px;
+   margin-right: 20px;
+}
+
+.test .second {
+   background-color: tomato;
+}

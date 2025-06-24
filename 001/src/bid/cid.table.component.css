@@ -1,0 +1,33 @@
+header {
+   color: white;
+   background-color: #0072b0;
+   border-radius: .5em;
+}
+
+.wrapper {
+   margin-left: -1.5em;
+   margin-right: -1.5em;
+}
+
+.container {
+   display: table;
+   width: 100%;
+   border-spacing: 1.5em 0;
+}
+
+main {
+   display: table-cell;
+   background-color: #fff;
+   border-radius: .5em;
+   width: 70%;
+}
+
+.sidebar {
+   display: table-cell;
+   padding: 1.5em;
+   background-color: #fff;
+   border-radius: .5em;
+   /* margin-left: 1.5em; -- doesn't work see border-spacing */
+   width: 30%;
+   padding-bottom: 5em;
+}
